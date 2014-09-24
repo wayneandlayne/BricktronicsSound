@@ -7,7 +7,7 @@ More details at http://www.wayneandlayne.com/bricktronics/
 
 To download. click the "Download ZIP" button on the right side of this page. Rename the uncompressed folder BricktronicsSound. Check that the BricktronicsSound folder contains BricktronicsSound.cpp and BricktronicsSound.h
 
-Place the BricktronicsSound library folder into your <arduinosketchfolder>/libraries/ folder. You may need to create the libraries subfolder if this is your first installed library. Restart the Arduino IDE.
+Place the BricktronicsSound library folder into your `<arduinosketchfolder>/libraries/` folder. You may need to create the libraries subfolder if this is your first installed library. Restart the Arduino IDE.
 
 **If you want to use sound sensors with your Bricktronics Shield or Megashield, you may also be interested in these libraries:**
 * [BricktronicsShield Arduino Library](https://github.com/wayneandlayne/BricktronicsShield)
