@@ -24,10 +24,13 @@
 
 // 1. With a Bricktronics Shield - Include these lines and be sure to
 // call Bricktronics::begin() in the setup() function below.
+// You also need to install the Adafruit MCP23017 library:
+//	https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library
 // Select the sensor port for the sound sensor (BS_SENSOR_1 through BS_SENSOR_4) below.
 // For ports 3 and 4, use the jumpers to connect pins 1-2 and 4-5.
 //
 //#include <Wire.h>
+//#include <Adafruit_MCP23017.h>
 //#include <Bricktronics2.h>
 //SoundSensor ss = SoundSensor(Bricktronics::BS_SENSOR_1);
 
