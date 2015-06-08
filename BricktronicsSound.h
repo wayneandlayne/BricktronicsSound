@@ -28,9 +28,16 @@
 #ifndef BRICKTROINCSSOUND_H
 #define BRICKTRONICSSOUND_H
 
-// Header files
+// Arduino header files
 #include <stdint.h>
-#include "BricktronicsSettings.h"
+#if ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
+
+// Library header files
+#include "utility/BricktronicsSettings.h"
 
 // The sound sensor has two modes of operation, DB and DBA.
 // DB mode considers all sound frequencies equally.
@@ -59,10 +66,10 @@ class BricktronicsSound
         // The output pins needs to support digital output.
         BricktronicsSound(uint8_t inputPin, uint8_t dbPin, uint8_t dbaPin);
 
-        // Constructor - Advanced constructor accepts a SensorSettings
+        // Constructor - Advanced constructor accepts a BricktronicsSensorSettings
         // struct to also override the low-level Arduino functions.
         // This constructor is used for the Bricktronics Shield and Megashield.
-        BricktronicsSound(const SensorSettings &settings);
+        BricktronicsSound(const BricktronicsSensorSettings &settings);
 
         // Starts up the sensor
         void begin(void);

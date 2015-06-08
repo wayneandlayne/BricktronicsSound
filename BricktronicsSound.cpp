@@ -43,7 +43,7 @@ BricktronicsSound::BricktronicsSound(uint8_t inputPin, uint8_t dbPin, uint8_t db
 
 // This is the complicated constructor that allows for overriding the
 // low-level Arduino functions.
-BricktronicsSound::BricktronicsSound(const SensorSettings &settings):
+BricktronicsSound::BricktronicsSound(const BricktronicsSensorSettings &settings):
     _inputPin(settings.ANA),
     _dbPin(settings.DA),
     _dbaPin(settings.DB),

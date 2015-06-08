@@ -14,8 +14,8 @@
 // ignoring frequencies outside the normal limits of human hearing.
 
 
-// Include the Bricktronics SoundSensor library
-#include <SoundSensor.h>
+// Include the BricktronicsSound library
+#include <BricktronicsSound.h>
 
 
 // This example can be run in three different ways. Pick one, and un-comment
@@ -23,33 +23,33 @@
 // for the other methods that you aren't using.
 
 // 1. With a Bricktronics Shield - Include these lines and be sure to
-// call Bricktronics::begin() in the setup() function below.
+// call BricktronicsShield::begin() in the setup() function below.
 // You also need to install the Adafruit MCP23017 library:
 //	https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library
-// Select the sensor port for the sound sensor (BS_SENSOR_1 through BS_SENSOR_4) below.
+// Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
 // For ports 3 and 4, use the jumpers to connect pins 1-2 and 4-5.
 //
-//#include <Wire.h>
-//#include <Adafruit_MCP23017.h>
-//#include <Bricktronics2.h>
-//SoundSensor ss = SoundSensor(Bricktronics::BS_SENSOR_1);
+#include <Wire.h>
+#include <Adafruit_MCP23017.h>
+#include <BricktronicsShield.h>
+BricktronicsSound ss(BricktronicsShield::SENSOR_1);
 
 // 2. With a Bricktronics Megashield - Include these lines but do not
-// call Bricktronics::begin() in the setup() function below.
-// Select the sensor port for the sound sensor (BMS_SENSOR_1 through BMS_SENSOR_4) below.
+// call BricktronicsShield::begin() in the setup() function below.
+// Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
 // Use the jumpers to connect pins 1-2 and 4-5 for the sound sensor.
 //
-//#include <Bricktronics2.h>
-//SoundSensor ss = SoundSensor(Bricktronics::BMS_SENSOR_4);
+//#include <BricktronicsMegashield.h>
+//BricktronicsSound ss(BricktronicsMegashield::SENSOR_4);
 
 // 3. With a Bricktronics Breakout board - No additional includes needed, just
 // update the pin assignments in the SoundSensor constructor below.
 //
-// The SoundSensor() arguments are: inputPin, dbPin, dbaPin
+// The BricktronicsSound() arguments are: inputPin, dbPin, dbaPin
 // There is one consideration for pin assignments:
 // A. inputPin needs to be an analog pin
 //
-//SoundSensor ss = SoundSensor(14, 12, 11);
+//BricktronicsSound ss(14, 12, 11);
 
 
 void setup() 
@@ -59,7 +59,7 @@ void setup()
 
   // Only call this if you are using a Bricktronics Shield,
   // otherwise leave it commented-out.
-  //Bricktronics::begin();
+  BricktronicsShield::begin();
 
   // Initialize the sound sensor connections
   ss.begin();
