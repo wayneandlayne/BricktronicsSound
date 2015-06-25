@@ -29,18 +29,22 @@
 // Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
 // For ports 3 and 4, use the jumpers to connect pins 1-2 and 4-5.
 //
-#include <Wire.h>
-#include <Adafruit_MCP23017.h>
-#include <BricktronicsShield.h>
-BricktronicsSound ss(BricktronicsShield::SENSOR_1);
+// Config 1 - arduino:avr:uno
+//#include <Wire.h>
+//#include <Adafruit_MCP23017.h>
+//#include <BricktronicsShield.h>
+//BricktronicsSound ss(BricktronicsShield::SENSOR_1);
+// Config end
 
 // 2. With a Bricktronics Megashield - Include these lines but do not
 // call BricktronicsShield::begin() in the setup() function below.
 // Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
 // Use the jumpers to connect pins 1-2 and 4-5 for the sound sensor.
 //
+// Config 2 - arduino:avr:mega:cpu=atmega2560
 //#include <BricktronicsMegashield.h>
 //BricktronicsSound ss(BricktronicsMegashield::SENSOR_4);
+// Config end
 
 // 3. With a Bricktronics Breakout board - No additional includes needed, just
 // update the pin assignments in the SoundSensor constructor below.
@@ -49,7 +53,9 @@ BricktronicsSound ss(BricktronicsShield::SENSOR_1);
 // There is one consideration for pin assignments:
 // A. inputPin needs to be an analog pin
 //
+// Config 3 - arduino:avr:uno
 //BricktronicsSound ss(14, 12, 11);
+// Config end
 
 
 void setup() 
@@ -59,7 +65,9 @@ void setup()
 
   // Only call this if you are using a Bricktronics Shield,
   // otherwise leave it commented-out.
-  BricktronicsShield::begin();
+  // Config 1 - arduino:avr:uno
+  //BricktronicsShield::begin();
+  // Config end
 
   // Initialize the sound sensor connections
   ss.begin();
