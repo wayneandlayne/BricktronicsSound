@@ -27,7 +27,7 @@
 // You also need to install the Adafruit MCP23017 library:
 //	https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library
 // Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
-// For ports 3 and 4, use the jumpers to connect pins 1-2 and 4-5.
+// For ports 3 and 4, use the jumpers to connect pins 2-3 and 4-5.
 //
 // Config 1 - arduino:avr:uno
 //#include <Wire.h>
@@ -39,7 +39,7 @@
 // 2. With a Bricktronics Megashield - Include these lines but do not
 // call BricktronicsShield::begin() in the setup() function below.
 // Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
-// Use the jumpers to connect pins 1-2 and 4-5 for the sound sensor.
+// Use the jumpers to connect pins 2-3 and 4-5 for the sound sensor.
 //
 // Config 2 - arduino:avr:mega:cpu=atmega2560
 //#include <BricktronicsMegashield.h>
@@ -58,7 +58,7 @@
 // Config end
 
 
-void setup() 
+void setup()
 {
   // Be sure to set your serial console to 115200 baud
   Serial.begin(115200);
@@ -74,14 +74,14 @@ void setup()
 }
 
 // This function draws a nice bar graph for displaying sound levels.
-void printLine(uint16_t val)
+void printLine(uint16_t val, char dot)
 {
   #define BUF_LEN 30
   char buffer[BUF_LEN];
   uint8_t x = (val * (uint16_t) BUF_LEN) / 1023;
   for (uint8_t i = 0; i < BUF_LEN; i++)
   {
-    buffer[i] = ((i < x) ? '*' : ' ');
+    buffer[i] = ((i < x) ? dot : ' ');
   }
   buffer[BUF_LEN - 1] = '\0';
   Serial.println(buffer);
@@ -97,16 +97,16 @@ void loop()
   switchTime = millis() + 5000;
   while (millis() < switchTime)
   {
-    printLine(ss.value());
+    printLine(ss.value(), '*');
   }
-  
+
   // Spend 5 seconds in dba mode
   Serial.println("----- Switching to DBA mode -----");
   ss.setMode(SOUND_SENSOR_MODE_DBA);
   switchTime = millis() + 5000;
   while (millis() < switchTime)
   {
-    printLine(ss.value());
+    printLine(ss.value(), 'a');
   }
 }
 

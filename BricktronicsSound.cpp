@@ -73,6 +73,7 @@ uint16_t BricktronicsSound::value(void)
 
 void BricktronicsSound::setMode(uint8_t mode)
 {
+    // If they pass-in an invalid mode, default to DBA mode
     switch (mode)
     {
         case SOUND_SENSOR_MODE_DB:
@@ -81,11 +82,11 @@ void BricktronicsSound::setMode(uint8_t mode)
             _digitalWrite(_dbaPin, LOW);
             break;
         case SOUND_SENSOR_MODE_DBA:
+        default:
             _mode = mode;
             _digitalWrite(_dbPin, LOW);
             _digitalWrite(_dbaPin, HIGH);
             break;
-        // else just ignore it
     }
 }
 
