@@ -12,6 +12,13 @@
 // that has two modes: dB and dBA. dB mode measures all frequencies equally,
 // while dBA mode (A = "adjusted") tries to mimic human ear sensitivity, by
 // ignoring frequencies outside the normal limits of human hearing.
+//
+// Written in 2015 by Matthew Beckler and Adam Wolf for Wayne and Layne, LLC
+// To the extent possible under law, the author(s) have dedicated all
+//   copyright and related and neighboring rights to this software to the
+//   public domain worldwide. This software is distributed without any warranty.
+// You should have received a copy of the CC0 Public Domain Dedication along
+//   with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>. 
 
 
 // Include the BricktronicsSound library
