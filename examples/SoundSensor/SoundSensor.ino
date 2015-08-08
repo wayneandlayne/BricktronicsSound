@@ -40,7 +40,7 @@
 //#include <Wire.h>
 //#include <Adafruit_MCP23017.h>
 //#include <BricktronicsShield.h>
-//BricktronicsSound ss(BricktronicsShield::SENSOR_1);
+//BricktronicsSound s(BricktronicsShield::SENSOR_1);
 // Config end
 
 // 2. With a Bricktronics Megashield - Include these lines but do not
@@ -50,18 +50,27 @@
 //
 // Config 2 - arduino:avr:mega:cpu=atmega2560
 //#include <BricktronicsMegashield.h>
-//BricktronicsSound ss(BricktronicsMegashield::SENSOR_4);
+//BricktronicsSound s(BricktronicsMegashield::SENSOR_4);
 // Config end
 
 // 3. With a Bricktronics Breakout board - No additional includes needed, just
 // update the pin assignments in the SoundSensor constructor below.
 //
-// The BricktronicsSound() arguments are: inputPin, dbPin, dbaPin
+// Connect these pins on the Bricktronics Breakout board:
+//  Pin 1 - Connect to any analog input pin (inputPin)
+//  Pin 2 - Connect to Ground
+//  Pin 3 - Connect to Ground
+//  Pin 4 - Connect to 5V
+//  Pin 5 - Connect to any digital pin (dbPin)
+//  Pin 6 - Connect to any digital pin (dbaPin)
+//
+// The BricktronicsSound() arguments are:
+//      inputPin (pin 1), dbPin (pin 5), dbaPin (pin 6)
 // There is one consideration for pin assignments:
 // A. inputPin needs to be an analog pin
 //
 // Config 3 - arduino:avr:uno
-//BricktronicsSound ss(14, 12, 11);
+//BricktronicsSound s(14, 12, 11);
 // Config end
 
 
@@ -77,7 +86,7 @@ void setup()
   // Config end
 
   // Initialize the sound sensor connections
-  ss.begin();
+  s.begin();
 }
 
 // This function draws a nice bar graph for displaying sound levels.
@@ -100,20 +109,20 @@ void loop()
 {
   // Spend 5 seconds in db mode
   Serial.println("----- Switching to DB mode -----");
-  ss.setMode(SOUND_SENSOR_MODE_DB);
+  s.setMode(SOUND_SENSOR_MODE_DB);
   switchTime = millis() + 5000;
   while (millis() < switchTime)
   {
-    printLine(ss.value(), '*');
+    printLine(s.value(), '*');
   }
 
   // Spend 5 seconds in dba mode
   Serial.println("----- Switching to DBA mode -----");
-  ss.setMode(SOUND_SENSOR_MODE_DBA);
+  s.setMode(SOUND_SENSOR_MODE_DBA);
   switchTime = millis() + 5000;
   while (millis() < switchTime)
   {
-    printLine(ss.value(), 'a');
+    printLine(s.value(), 'a');
   }
 }
 
