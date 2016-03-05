@@ -36,7 +36,7 @@
 // Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
 // For ports 3 and 4, use the jumpers to connect pins 2-3 and 4-5.
 //
-// Config 1 - arduino:avr:uno
+// Config 1 - WNLCFGBS
 //#include <Wire.h>
 //#include <Adafruit_MCP23017.h>
 //#include <BricktronicsShield.h>
@@ -48,7 +48,7 @@
 // Select the sensor port for the sound sensor (SENSOR_1 through SENSOR_4) below.
 // Use the jumpers to connect pins 2-3 and 4-5 for the sound sensor.
 //
-// Config 2 - arduino:avr:mega:cpu=atmega2560
+// Config 2 - WNLCFGBMS
 //#include <BricktronicsMegashield.h>
 //BricktronicsSound s(BricktronicsMegashield::SENSOR_4);
 // Config end
@@ -69,7 +69,7 @@
 // There is one consideration for pin assignments:
 // A. inputPin needs to be an analog pin
 //
-// Config 3 - arduino:avr:uno
+// Config 3 - WNLCFGNS
 //BricktronicsSound s(14, 12, 11);
 // Config end
 
@@ -81,7 +81,7 @@ void setup()
 
   // Only call this if you are using a Bricktronics Shield,
   // otherwise leave it commented-out.
-  // Config 1 - arduino:avr:uno
+  // Config 1 - WNLCFGBS
   //BricktronicsShield::begin();
   // Config end
 
