@@ -6,9 +6,8 @@ BricktronicsSound
 More details at http://www.wayneandlayne.com/bricktronics/
 
 **To Download**
-Click the "Clone or download" button on the upper-right side of this page below the pink bar, then select "Download ZIP". Rename the uncompressed folder BricktronicsSound. Check that the BricktronicsSound folder contains BricktronicsSound.cpp and BricktronicsSound.h
-
-Place the BricktronicsSound library folder into your `<arduinosketchfolder>/libraries/` folder. You may need to create the libraries subfolder if this is your first installed library. Restart the Arduino IDE.
+* Click the "Clone or download" button on the upper-right side of this page below the pink bar, then select "Download ZIP". Rename the uncompressed folder BricktronicsSound. Check that the BricktronicsSound folder contains BricktronicsSound.cpp and BricktronicsSound.h
+* Place the BricktronicsSound library folder into your `<arduinosketchfolder>/libraries/` folder. You may need to create the libraries subfolder if this is your first installed library. Restart the Arduino IDE.
 
 **API Highlights**
 * `BricktronicsSound(uint8_t inputPin, uint8_t dbPin, uint8_t dbaPin)` - Constructor
