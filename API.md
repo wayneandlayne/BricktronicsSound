@@ -8,8 +8,6 @@ Use the sound sensor with any sensor port on the Bricktronics Shield. For sensor
 
 Constructor usage for Bricktronics Shield
 ```C++
-#include <Wire.h>
-#include <Adafruit_MCP23017.h>
 #include <BricktronicsShield.h>
 #include <BricktronicsSound.h>
 BricktronicsSound s(BricktronicsShield::SENSOR_1);
